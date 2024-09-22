@@ -1,3 +1,616 @@
-/* Your styles go here */
-@import "bootstrap/scss/bootstrap.scss";
-@import "bootstrap-icons/font/bootstrap-icons.css";
+// My Colors
+$pale-blue: #8ecae6; //#8ecae6;
+$blue-green: #1e87a1; //#219ebc;
+$dark-blue: #023047; //#023047;
+$yellow: #ffd503; //#ffb703;
+$orange: #fd9826; //#fb8500;
+$light-blue: #afddf3;
+
+// Font
+* {
+    font-family: "Space Grotesk", "Montserrat", verdana, sans-serif;
+}
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Default Bootstrap variable overrides
+$primary: $dark-blue;
+$secondary: $yellow;
+
+$navbar-dark-color: white;
+$navbar-dark-hover-color: $dark-blue;
+$input-focus-box-shadow: 0 0 0 0.25rem $pale-blue;
+$form-select-focus-box-shadow: 0 0 0 0.25rem $pale-blue;
+
+$carousel-control-opacity: 1;
+$carousel-control-hover-opacity: 1;
+$carousel-control-color: black;
+$carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z'/></svg>");
+$carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/></svg>");
+
+$accordion-button-color: white;
+$accordion-button-bg: $dark-blue;
+$accordion-bg: rgb(250, 241, 226);
+$accordion-button-active-color: black;
+$accordion-button-active-bg: $orange;
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{white}'><path fill-rule='evenodd' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{black}'><path fill-rule='evenodd' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z'/></svg>");
+$accordion-padding-y: 2.5rem;
+$accordion-padding-x: 1.75rem;
+$accordion-border-radius: 30px;
+
+$card-bg: #196e84;
+$card-color: white;
+$card-border-width: 0;
+$card-border-radius: 20px;
+
+
+
+
+
+
+// Required
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+
+// Optional Bootstrap components here
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+#advantages, #testimonials, #faq, #purchases, footer {
+    margin-top: 7rem;
+}
+
+
+// Navbar Overrides
+.navbar-dark {
+    .navbar-nav {
+        .nav-item {
+            &:hover {
+                background-color: $yellow;
+            }
+        }
+        .nav-link {
+            padding: 1.4rem;
+            &:focus {
+                color: $dark-blue;
+                background-color: $yellow;
+            }
+        }
+    }
+}
+
+.navbar {
+    .container-fluid {
+        justify-content: flex-start;
+    }
+}
+
+.navbar-brand {
+    margin-left: 0.5rem;
+}
+
+
+
+// Hero/Jumbotron/Header
+
+#jumbotron {
+    background-image: url("../images/hero/shapes3.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}
+
+#intro {
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px black;
+    h1 {
+        font-size: 12vw;
+    }
+}
+
+#intro-form {
+    background-color: $blue-green;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px $dark-blue;
+    color: white;
+    text-shadow: 1px 1px black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.offer-button {
+    border-style: none;
+    font-size: 20px;
+    padding: 15px;
+    width: 100%;
+    box-shadow: 2px 2px 2px $dark-blue;
+    &:hover {
+        box-shadow: -2px -2px 2px $dark-blue;
+        background-color: $orange;
+    }
+}
+
+
+
+// How It Works Section
+#thinking-image {
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px $dark-blue;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    height: auto;
+}
+
+.step-numbers {
+    font-size: 2.5rem;
+    height: auto;
+    color: $yellow;
+    text-shadow: 0px 0px 7px black;
+    text-align: end;
+}
+
+.step-contain {
+    background-color: $light-blue;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px $dark-blue;
+}
+
+.step-contain-deal {
+    background-color: $blue-green;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px $dark-blue;
+    p {
+        color: white;
+    }
+}
+
+.step-p {
+    margin-bottom: 0;
+    padding: 1rem 0.7rem 1rem 0.7rem;
+    font-size: 1.2rem;
+}
+
+.step-arrows {
+    display: none;
+}
+
+#how-link {
+    color: $blue-green;
+    font-weight: 900;
+    &:hover {
+        color: black;
+        font-weight: 900;
+    }
+}
+
+
+
+
+// Advantages Section
+.advantage-img {
+    width: 25%;
+    margin-right: 1rem;
+}
+
+.advantage-p {
+    width: 70%;
+}
+
+.advantage-contain {
+    padding: 1.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #e6f6fd;
+    box-shadow: 1px 1px 1px $dark-blue;
+}
+
+.md-hide {
+    display: none;
+}
+
+
+
+
+// TESTIMONIALS SECTION
+.carousel-control-prev,
+.carousel-control-next {
+    position: relative;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: $yellow;
+    width: 20%;
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    background-color: $orange;
+  }
+}
+
+.carousel-caption {
+    position: absolute;
+    right: (100% - $carousel-caption-width) * .5;
+    top: $carousel-caption-spacer;
+    left: (100% - $carousel-caption-width) * .5;
+    padding-top: $carousel-caption-padding-y;
+    padding-bottom: $carousel-caption-padding-y;
+    color: $carousel-caption-color;
+    text-align: left;
+}
+
+.ratings {
+    text-align: center;
+    color: $yellow;
+}
+
+.testimonial-img {
+    height: 88vh;
+    width: 100%;
+}
+
+.reviews {
+    background-color: $blue-green;
+    color: white;
+    box-shadow: 1px 1px 2px black;
+    &:hover {
+        background-color: $dark-blue;
+        color: white;
+    }
+}
+
+
+
+// SELLING POINT
+#selling-point {
+    background-image: url(../images/wheel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 13rem;
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+#selling-point .container {
+    width: 60%;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+#selling-point .container div {
+    border-radius: 30px;
+    background-color: #ffe254;
+    // background-image: linear-gradient($light-blue, $pale-blue);
+}
+
+#selling-point p {
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-weight: 900;
+}
+
+#selling-point button {
+    border-style: none;
+    color: white;
+    background-color: $dark-blue;
+    font-size: 20px;
+    padding: 15px;
+    width: 90%;
+    margin-bottom: 3rem;
+    box-shadow: 2px 2px 2px $dark-blue;
+    &:hover {
+        box-shadow: -2px -2px 2px $dark-blue;
+        background-color: $blue-green;
+    }
+}
+
+
+
+
+
+// FAQ SECTION (linear gradients didn't fit the website theme, though looked nice)
+.accordion-button {
+    // background: linear-gradient(#035178, $dark-blue);
+    &:hover {
+        background-color: $blue-green;
+    }
+  
+    &:not(.collapsed) {
+      color: $accordion-button-active-color;
+        // background: linear-gradient($yellow, $orange);
+      box-shadow: inset 0 ($accordion-border-width * -1) 0 $accordion-border-color;
+      &:hover {
+        background-color: $orange;
+      }
+  
+      &::after {
+        background-image: escape-svg($accordion-button-active-icon);
+        transform: $accordion-icon-transform;
+      }
+    }
+}
+
+#faq a button {
+    box-shadow: 1px 1px 2px $dark-blue;
+    &:hover {
+        background-color: $orange;
+    }
+}
+
+
+
+
+
+// RECENT PURCHASES
+#card1, #card2, #card3, #card4, #card5 {
+    display: none;
+}
+
+.card {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 1px 1px 2px $dark-blue;
+    width: 90%;
+}
+
+.card i {
+    color: $yellow;
+}
+
+.card-body a {
+    &:hover {
+        background-color: $orange;
+    }
+}
+
+.card-img-top {
+    box-shadow: 0px 1px 2px $dark-blue;
+}
+
+.card-title {
+    background-color: $dark-blue;
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+
+
+// Footer
+footer {
+    background-color: $dark-blue;
+    color: white;
+    a {
+        color: $yellow;
+    }
+    ul {
+        padding-left: 0;
+        li {
+            list-style-type: none;
+        }
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+}
+
+#copyright {
+    background-color: black;
+    text-align: center;
+    padding: 2rem;
+    a:hover {
+        color: $orange;
+    }
+}
+
+#privacy {
+    margin-right: 1rem;
+}
+
+#rights-reserved {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+#social-media {
+    ul {
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        li {
+        display: inline-block;
+        font-size: 2rem;
+        letter-spacing: 1.2rem;
+        a {
+            &:hover {
+                color: $orange;
+            }
+        }
+        }
+    }
+}
+
+#footer-logo {
+    img {
+        width: 100%;
+    }
+}
+
+#contact-footer {
+    text-align: center;
+    a {
+        text-decoration: none;
+        &:hover {
+            color: $orange;
+            text-decoration: underline;
+        }
+    }
+}
+
+#additional-links {
+    text-align: center;
+    a:hover {
+        color: $orange;
+    }
+}
+
+#attributions {
+    border-top: 2px solid white;
+    a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+            color: $yellow;
+            text-decoration: underline;
+        }
+    }
+
+    li {
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+
+
+// Breakpoints
+// 576 px and up
+@include media-breakpoint-up(sm) {
+
+}
+
+
+// Custom Breakpoints
+@media only screen and (max-width: 768px) and (min-width: 500px) {
+    .testimonial-img {
+        height: 70vh;
+    }
+}
+
+@media only screen and (max-width: 793px) and (min-width: 0px) {
+    #selling-point .container {
+        width: 90%;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    #selling-point p {
+        font-size: 3rem;
+    }
+}
+// End custom breakpoints
+
+
+// 768 px and up
+@include media-breakpoint-up(md) {
+    #intro {
+        h1 {
+            font-size: 8vw;
+        }
+    }
+
+    .navbar-brand {
+        margin-left: 1rem;
+    }
+
+    .advantage-contain {
+        padding: 1rem;
+    }
+
+    // .carousel-inner {
+    //     height: 90vh;
+    // }
+    .testimonial-img {
+        height: 60vh;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    #social-media ul li {
+        font-size: 3rem;
+    }
+
+    #rights-reserved {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        display: inline;
+    }
+}
+
+// 992 and up
+@include media-breakpoint-up(lg) {
+    .navbar {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    #navbarNav {
+        margin-left: 1rem;
+    }
+
+    #intro {
+        h1 {
+            font-size: 5vw;
+            margin-top: 15vh;
+        }
+    }
+
+    #jumbotron {
+        height: 100vh;
+    }
+
+    #thinking-image {
+        margin-top: 0;
+    }
+
+    .step-arrows {
+        display: flex;
+        font-size: 2.5rem;
+        height: auto;
+        color: $orange;
+        text-align: end;
+    }
+
+    .advantage-hide {
+        display: none;
+    }
+
+    .md-hide {
+        display: flex;
+    }
+
+    #advantage-main-p {
+        width: 60%;
+        margin: auto;
+    }
+
+    .card {
+        width: 30%;
+    }
+
+    #contact-footer, #additional-links, #attributions {
+        font-size: 1.5rem;
+        h4 {
+            font-size: 1.8rem;
+        }
+    }
+}

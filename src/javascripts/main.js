@@ -1,2 +1,3 @@
-//TODO - Your ES6 JavaScript code (if any) goes here
-import "bootstrap"
+// Bootstrap requires the type="module" in HTML; my code cannot have that
+
+import "bootstrap";
